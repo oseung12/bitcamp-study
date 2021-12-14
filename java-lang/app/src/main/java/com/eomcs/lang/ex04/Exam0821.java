@@ -15,8 +15,8 @@ public class Exam0821 {
 
     // 블록 안에 선언된 변수는 블록 실행을 마치면 제거된다.
     // 따라서 사용할 수 없다.
-    //  System.out.println(i); // 컴파일 오류!
-    //  System.out.println(b); // 컴파일 오류!
+    //    System.out.println(i); // 컴파일 오류!
+    //    System.out.println(b); // 컴파일 오류!
 
   }
 }

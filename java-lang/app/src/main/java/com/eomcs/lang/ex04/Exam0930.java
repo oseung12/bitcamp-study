@@ -6,18 +6,16 @@ public class Exam0930 {
   public static void main(String[] args) {
 
     // 부동소수점 메모리의 값은 정수 메모리에 저장할 수 없다.
-    // 그럼에도 저장하려 한다면, 명시적 형변환 문법을 사용해야한다.
-    //
+    // 그럼에도 저장하려 한다면, 명시적 형변환 문법을 사용해야 한다.
+    // 
     // 명시적 형변환을 통해 부동소수점의 값을 정수 메모리에 저장할 때
     // 소수점 이하의 값이 짤린다.
     //
-    // 해결책?
-    // "명시적 형변환(explicit type conversion)"
+    // "명시적 형변환(explicit type conversion)"?
     // - 컴파일러에게 강제로 값을 넣을 것을 명령하는 것.
     //
     // float ==> int 
     float f = 3.14f;
-    //int i = f; // 오류 발생!
     int i = (int)f;  // 소수점 이하가 제거된다.
     System.out.println(i);
 
