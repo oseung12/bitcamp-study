@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>간식 관리 대장</title>
+</head>
+<body>
+
+<h1>간식 신청</h1>
+
+<form>
+이름*: <input id="x-name" type="text"><br>
+종류*: <input id="x-type" type="text"><br>
+가격 : <input id="x-price" type="text"><br>
+개수*: <input id="x-pcs" type="text"><br>
+(*) 항목은 필수 입력입니다.<br>
+<button id="x-add-btn" type="button">추가</button>
+<button id="x-cancel-btn" type="button">취소</button>
+</form>
+
+<script type="text/javascript">
+    var xName = document.querySelector("#x-name");
+    var xType = document.querySelector("#x-type");
+    var xPrice = document.querySelector("#x-price");
+    var xPcs = document.querySelector("#x-pcs");
+
+    document.querySelector("#x-add-btn").onclick = function() {
+      if (xName.value == "" || xType.value == "" || xPcs.value == "") {
+        window.alert("필수 입력 항목이 비어 있습니다.");
+        return;
+      }
+
+    fetch(`/my1/add?name=${xName.value}&type=${xType.value}&price=${xPrice.value}&pcs=${xPcs.value}`)
+    .then(function(response) {
+      return response.text();
+    })
+    .then(function(text) {
+      console.log(text);
+      location.href = "index.html";
+    });
+  };
+
+  document.querySelector("#x-cancel-btn").onclick = function() {
+    window.location.href = "index.html";
+  };
+</script>
+
+</body>
+</html>
