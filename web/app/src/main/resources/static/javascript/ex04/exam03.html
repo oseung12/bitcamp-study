@@ -11,18 +11,31 @@
 // 일반적인 값 뿐만 아니라, 함수와 객체까지 저장할 수 있다.
 
 var obj = new Object();
+// ovj 에는 그 주소가 들어가있다.
 
 obj.name = "홍길동";
+// key - name \ value - "홍길동"
 obj.f1 = () => console.log("f1()....");
+// key - f1 \ value - 함수객체 주소
+// f1이라는 이름으로 함수객체를 만든다.
+// 그 함수 객체의 주소가 obj.f1에 들어간다.
+//
 
 var obj2 = new Object();
 obj2.v1 = 100;
 obj2.v2 = true;
 obj2.v3 = "문자열";
 obj2.v4 = () => console.log("v4()....");
+//.v4란 이름으로 함수 객체를 만든다.
+// 그 함수 객체의 주소가 obj2.v4에 들어간다.
+//
+
 
 // 이렇게 프로퍼티의 값으로 다른 객체의 주소를 저장할 수 있다.
+//객체.프로퍼티명  = 값;
 obj.other = obj2;
+// key - other \ value - other의 (obj2)객체 주소.
+//
 
 // 객체의 프로퍼티 값 꺼내기
 console.log(obj.name);
@@ -30,15 +43,12 @@ console.log(obj.other.v1); // 자바의 OGNL(Object Graph Navigation Language)�
 console.log(obj.other.v2);
 console.log(obj.other.v3);
 
+
 // 객체의 함수 호출
 obj.f1();
-obj.other.v4();
+obj.other.v4(); // 자바 OGNL(object-graph Navigation language)표기법과 비슷하다.; 객체에 접근하기위한 언어.
+//객체.프로퍼티.프로퍼티();
 
 </script>
 </body>
 </html>
-
-
-
-
-

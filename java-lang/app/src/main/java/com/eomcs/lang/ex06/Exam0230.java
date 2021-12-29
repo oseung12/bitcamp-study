@@ -1,12 +1,12 @@
 package com.eomcs.lang.ex06;
 
-//# 흐름 제어문 - switch 문법 
+//# 흐름 제어문 - switch 문법
 //
 public class Exam0230 {
   public static void main(String[] args) {
     // switch (값) {}
     // 값으로 가능한 데이터 타입은?
-    // => int 정수(byte,short,int,char) _4byte , 문자열, 특별한 상수 Enum 타입
+    // => int 정수(byte,short,int,char), 문자열, 특별한 상수 Enum 타입
     // => case 값으로 변수를 사용할 수 없다. 리터럴만 가능하다.
     byte b = 2;
     switch (b) {
@@ -29,8 +29,7 @@ public class Exam0230 {
       default:
     }
 
-    char c = 'A'; // A문자의 유니코드 값(유니코드 charset_문자집합)(UTF-16) 0x41(65)을 c에 저장한다. 
-    // c에는 'A'문자가 저장되는 것이 아닌 문자에 부여된 번호가 저장된다.
+    char c = 'A'; // A문자의 유니코드 값(UTF-16) 0x41(65)을 c에 저장한다.
     switch (c) {
       // case 의 값도 int 값이면 무엇이든 된다.
       case 'A': // 0x41 = 65

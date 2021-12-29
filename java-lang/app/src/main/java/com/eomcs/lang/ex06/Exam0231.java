@@ -1,6 +1,6 @@
 package com.eomcs.lang.ex06;
 
-//# 흐름 제어문 - switch 문법 : 단순조건문의 경우에 if문보다 switch문법이 더 편리하다.
+//# 흐름 제어문 - switch 문법
 //
 public class Exam0231 {
   public static void main(String[] args) {

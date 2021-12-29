@@ -8,17 +8,19 @@
 <h1>객체 - 객체 생성과 초기화 III</h1>
 <script>
 "use strict"
+// 3) 함수를 이용해 객체 생성
 
 // 함수를 이용하여 객체를 초기화시키기
+// 매서드를 만든다.
 function createScore(name, kor, eng, math) {
-	var obj = new Object();
-	obj.name = name;
+	var obj = new Object(); // 기본 객체를 만든다.
+	obj.name = name;  //name이라는 프로퍼티 추가. (변수 추가)
 	obj.kor = kor;
 	obj.eng = eng;
 	obj.math = math;
-	obj.sum = kor + eng + math;
-	obj.aver = obj.sum / 3;
-	return obj;
+	obj.sum = kor + eng + math;  // 변수
+	obj.aver = obj.sum / 3;      // 변수
+	return obj; //객체 주소를 리턴한다.
 }
 
 var scores = []; // new Array();
@@ -44,8 +46,3 @@ for (var score of scores) {
 </script>
 </body>
 </html>
-
-
-
-
-

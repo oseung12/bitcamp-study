@@ -14,38 +14,42 @@
         대상자[속성명] {...}
    */
 
+/*div가 부모로부터 (2)번째 자식인 경우 */
   div:nth-child(2) {
     border: 1px dashed blue;
   }
- 
+
 /* 자식들 중에서 첫째인 li */
-  li:first-child { 
+  li:first-child {
     background-color: gray;
   }
 
 /* 마우스 커서가 올려져 있는 li */
-
-  li:hover { 
-    text-decoration: underline;
+  li:hover {
+    text-decoration: underline;    /* text-decoration은 하위tag(자식tag)에게도 상속(적용)된다 */
   }
 
+/* 웹브라우저 내역에 한번 방문한 적이 있는 것에 대하여 적용한다 */
   a:visited {
     color: gray;
   }
 
+/* 링크가 걸려있는 것에 대하여 */
   a:link {
     color: green;
   }
 
+/* 마우스를 누르고있는 상태 */
   a:active {
     background-color: yellow;
   }
 
+/* 포커스를 가진 a tag에 대하여 */
   a:focus {
     border: 2px inset red;
     font-size: 150%;
   }
-  
+
   .b1:focus {
     background-color: blue;
     color: yellow;
@@ -54,7 +58,7 @@
 
 /* 키보드 입력을 받을 수 있는 상태 */
 
-  input:focus { 
+  input:focus {
     background-color: green;
   }
 

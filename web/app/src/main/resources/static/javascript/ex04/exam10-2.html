@@ -9,8 +9,10 @@
 <script>
 "use strict"
 
+//2) 레퍼런스 배열 사용
+
 // 배열을 이용하여 여러 개의 객체를 다루기
-var scores = []; //new Array();
+var scores = []; //new Array(); // 레퍼런스 배열 // 즉, 변수 배열을 만든다.
 scores[0] = new Object();
 scores[0].name = "홍길동";
 scores[0].kor = 100;
@@ -19,7 +21,7 @@ scores[0].math = 100;
 scores[0].sum = scores[0].kor + scores[0].eng + scores[0].math;
 scores[0].aver = scores[0].sum / 3;
 
-scores[1] = new Object();
+scores[1] = new Object(); // 1번 레퍼런스에 새 객체를 넣어서 배열을 만들어!
 scores[1].name = "임꺽정";
 scores[1].kor = 90;
 scores[1].eng = 90;
@@ -27,7 +29,7 @@ scores[1].math = 90;
 scores[1].sum = scores[1].kor + scores[1].eng + scores[1].math;
 scores[1].aver = scores[1].sum / 3;
 
-scores[2] = new Object();
+scores[2] = new Object();  // 2번 레퍼런스에 새 객체를 넣어서 배열을 만들어!
 scores[2].name = "임꺽정";
 scores[2].kor = 80;
 scores[2].eng = 80;
@@ -41,8 +43,3 @@ for (var score of scores) {
 </script>
 </body>
 </html>
-
-
-
-
-

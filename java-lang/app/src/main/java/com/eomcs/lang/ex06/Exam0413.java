@@ -8,9 +8,8 @@ public class Exam0413 {
     // for (변수선언 및 초기화; 조건; 증감문) {문장1; 문장2; ...}
 
     // 조건문 제거
-    // 현업에서는 이렇게 사용하지 않도록 한다.
     int i = 1;
-    for (;;) {
+    for (  ;  ;  ) {
       if (i > 5)
         break;
       System.out.println(i);

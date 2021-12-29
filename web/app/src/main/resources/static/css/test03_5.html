@@ -14,31 +14,32 @@
         대상자[속성명] {...}
    */
   h1 {
+    border: 1px solid red;
     padding-left: 10px;
   }
-  
-  /* 첫 번째 대상을 지정한다 */
-  h1:nth-child(1) { 
+
+  /* 부모로부터 첫 번째 대상을 지정한다 */
+  h1:nth-child(1) {  /* 현재 부모tag로 부터 두번째 대상이므로 h1(1)은 적용되지않는다. */
     background-color: gray;
   }
   h1:nth-child(10) {
     background-color: red;
-  } 
-  h1:nth-child(2n) {
+  }
+  h1:nth-child(2n) {  /* 2n : 짝수번째  */
     border-left: 20px solid violet;
-  } 
-  
-  h1:nth-child(2n + 1) {
+  }
+
+  h1:nth-child(2n + 1) { /*  2n + 1 : 홀수번째 */
     border-right: 10px solid royalblue;
   }
-  
+
   h1:first-child {
     text-decoration: underline;
   }
-  
-  h1:last-child {
+
+  h1:last-child {   /* 부모로부터 h1이 막내 tag인 경우 */
     text-decoration: overline;
-  } 
+  }
 
   </style>
 </head>
