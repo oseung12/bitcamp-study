@@ -37,7 +37,7 @@ public class Exam0112 {
     }
 
     // 위에서 작성한 설계도에 따라 메모리를 준비해보자!
-    // JVM Stack에 들어가는 (주소)메모리 Score의 레퍼런스!
+    // JVM Stack에 들어가는 (주소)메모리를 담는 Score의 레퍼런스!
     Score s; // int 변수 선언하듯이 이렇게 하면 될까?
     //
     // => 이 선언은 설계도에 따라 메모리를 준비시키는 명령이 아니다!!!
@@ -112,6 +112,7 @@ public class Exam0112 {
 // - 단일한 타입의 메모리를 묶는 문법이다.
 //
 // ## primitive(프리머티브) 데이터 타입 변수와 레퍼런스
+// - Primitive(원시타입) 정수, 실수, 문자, 논리 리터럴등의 실제 데이터 값을 저장하는 타입
 // - primitive type(byte, short, int, long, float, double, boolean, char)의
 //   메모리를 만들 때 변수 선언 만으로 완료된다.
 //   변수 이름이 곧 메모리를 가리키는 이름이 된다.
