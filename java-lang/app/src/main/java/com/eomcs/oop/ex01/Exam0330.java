@@ -17,6 +17,7 @@ public class Exam0330 {
     Score s2 = new Score();
 
     s2 = s1;
+    // s1 주소를 s2에 저장한다.
     // s1의 주소는 s2에도 저장되었다.
     // 즉 s1이 가리키는 객체는 s2도 가리키게 되었다.
     // JVM은 객체의 참조 상태를 관리하기 위해 "레퍼런스 카운트(reference count)"를 이용한다.

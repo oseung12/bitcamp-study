@@ -118,6 +118,7 @@
 
  function updateTodo(no) {
    // 현재 Todo 항목을 편집 중인 상태에서 변경 버튼을 눌렀다면
+   // HTMLTableCellElement(=td tag)현재 td안에 input박스가 있다면.!! 편집전의 상태고 돌린다.
    if (titleInput.parentNode instanceof HTMLTableCellElement) {
      // 다른 항목을 편집하기 위해 이동하기 전에 편집 전의 상태로 되돌린다.
      titleInput.parentNode.querySelector("span").style["display"] = "";

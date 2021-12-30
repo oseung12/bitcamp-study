@@ -15,10 +15,10 @@ public class Exam0230 {
       float aver;
     }
 
-    // 레퍼런스 배열 준비
+    // 레퍼런스(주소를 받는다) 배열 준비
     Score[] arr = new Score[3];
 
-    // 반복문을 이용하여 레퍼런스 배열에 인스턴스 주소를 저장한다.
+    // 반복문을 이용하여 레퍼런스 배열에 인스턴스(일련의 연속된 메모리) 주소를 저장한다.
     for (int i = 0; i < arr.length; i++) {
       arr[i] = new Score();
     }
