@@ -25,6 +25,7 @@ public class Exam0120 {
     Score s3 = new Score();
 
     // 각 인스턴스에 한 명의 성적 데이터를 저장하라!
+    // 레퍼런스.변수명 = 값
     s1.name = "홍길동";
     s1.kor = 100;
     s1.eng = 90;

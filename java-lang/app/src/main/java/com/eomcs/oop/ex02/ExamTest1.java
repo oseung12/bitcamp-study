@@ -5,7 +5,7 @@ public class ExamTest1 {
 
 
   static class Score {
-
+    // 변수 선언 : 데이터 타입을 설계
     String name;
     int kor;
     int eng;
@@ -13,7 +13,8 @@ public class ExamTest1 {
     int sum;
     float average;
 
-    public void Calculate() {
+    // 매서드 정의 : 데이터를 다루는 연산자를 정의
+    void Calculate() {
       this.sum = this.kor + this.eng + this.math;
       this.average = this.sum / 3f;
     }

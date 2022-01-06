@@ -21,7 +21,7 @@ public class Exam0113 {
         (byte)0x23, // #
         (byte)0x25, // %
         (byte)0x2b, // +
-        (byte)0xea, (byte)0xb0, (byte)0x80, // 가
+        (byte)0xea, (byte)0xb0, (byte)0x80, // 가  (UTF-8에서 한글은 3byte)
         (byte)0xea, (byte)0xb0, (byte)0x81, // 각
         (byte)0xeb, (byte)0x98, (byte)0x98, // 똘
         (byte)0xeb, (byte)0x98, (byte)0xa5  // 똥
@@ -29,6 +29,7 @@ public class Exam0113 {
 
     String s1 = new String(bytes);
     System.out.println(s1);
+    System.out.println("------------------");
 
     // 생성자에 바이트 배열을 넘길 때
     // 바이트 배열에 들어 있는 데이터의 문자 코드표를 알려주지 않으면,

@@ -12,7 +12,9 @@ public class Exam0440 {
     float average;
 
     Score() {
+      // 생성자 안에서 다른 생성자를 호출할 수 있다!
       // 다른 생성자를 호출할 때는 this()를 사용한다.
+      // 여기서 this()는 다른 생성자를 가리킨다.
       // 단, 생성자의 첫 문장으로 와야 한다.
       this("이름없음"); // Score(String) 생성자 호출
 
@@ -37,6 +39,7 @@ public class Exam0440 {
     }
 
     public void compute() {
+      // this("오호라") // 일반 메서드에서 생성자를 호출할 수 없다!
       this.sum = this.kor + this.eng + this.math;
       this.average = this.sum / 3f;
     }

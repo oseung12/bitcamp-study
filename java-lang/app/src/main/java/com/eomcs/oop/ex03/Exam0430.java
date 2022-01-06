@@ -11,15 +11,18 @@ public class Exam0430 {
     int sum;
     float average;
 
+    // 기본 생성자
     Score() {
       System.out.println("Score()");
     }
 
+    // 문자열을 받는 생성자
     Score(String name) {
       System.out.println("Score(String)");
       this.name = name;
     }
 
+    // 문자열과 int 값을 받는 생성자
     Score(String name, int kor, int eng, int math) {
       System.out.println("Score(String,int,int,int) 호출!");
       this.name = name;
@@ -37,7 +40,7 @@ public class Exam0430 {
 
   public static void main(String[] args) {
 
-    // 생성자가 여러 개 일 때 파라미터에 전달하는 값으로 구분한다.
+    // 생성자가 여러 개 일 때 파라미터에 전달하는 값으로 호출된 생성자를 구분한다.
     Score s1 = new Score();
 
     // 인스턴스 생성 후에 나중에 따로 생성자를 호출할 수 없다!
