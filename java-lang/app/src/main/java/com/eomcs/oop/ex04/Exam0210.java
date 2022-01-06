@@ -25,7 +25,7 @@ public class Exam0210 {
     // 두 인스턴스에 들어 있는 문자열이 같은 지 비교할 때 
     System.out.println(s1.equals("aaa")); // false
     System.out.println(s1.equals("Hello")); // true
-    System.out.println(s1 == "Hello"); // false
+    System.out.println(s1 == "Hello"); // false  // s1이 들어있는것은 주소이므로 false
 
     System.out.println("-------------------------");
 
@@ -61,9 +61,9 @@ public class Exam0210 {
     System.out.println(s5);
 
     // => primitive 값을 문자열로 만든다.
-    String s6 = String.valueOf(true);
-    String s7 = String.valueOf(3.14f);
-    String s8 = String.valueOf(100);
+    String s6 = String.valueOf(true); // "true"
+    String s7 = String.valueOf(3.14f); // "3.14"
+    String s8 = String.valueOf(100);  // "100"
     System.out.println(s6);
     System.out.println(s7);
     System.out.println(s8);

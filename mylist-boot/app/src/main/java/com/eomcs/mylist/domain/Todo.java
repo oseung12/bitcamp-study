@@ -1,9 +1,12 @@
 package com.eomcs.mylist.domain;
 
-
 public class Todo {
   String title;
   boolean done;
+
+  public Todo() {
+    System.out.println("Todo() 호출됨!");
+  }
 
   public String getTitle() {
     return title;
@@ -17,7 +20,6 @@ public class Todo {
   public void setDone(boolean done) {
     this.done = done;
   }
-
   @Override
   public String toString() {
     return "Todo [title=" + title + ", done=" + done + "]";

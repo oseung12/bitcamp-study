@@ -6,6 +6,10 @@ public class Board {
   int viewCount;
   java.sql.Date createdDate;
 
+  public Board() {
+    System.out.println("Board() 호출됨!");
+  }
+
   public String getTitle() {
     return title;
   }
@@ -36,5 +40,4 @@ public class Board {
     return "Board [title=" + title + ", content=" + content + ", viewCount=" + viewCount
         + ", createdDate=" + createdDate + "]";
   }
-
 }

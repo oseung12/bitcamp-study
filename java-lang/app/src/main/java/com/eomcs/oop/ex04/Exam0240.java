@@ -25,6 +25,7 @@ public class Exam0240 {
     // yyyy-MM-dd 형식으로 다루기 때문에 편리하다.
 
     // 스태틱 메서드 활용
+    // 클래스이름.메서드명();
     long currMillis = System.currentTimeMillis();
 
     // 생성자 활용

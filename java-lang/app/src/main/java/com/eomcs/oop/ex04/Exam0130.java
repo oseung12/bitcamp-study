@@ -7,9 +7,9 @@ public class Exam0130 {
 
   public static void main(String[] args) throws Exception {
     // 생성자가 있다하더라도 접근 권한이 없다면,
-    // 생성자를 호출할 수 없다.
+    // 서로 패키지가 다르므로  생성자를 호출할 수 없다.
     // 이런 경우 new 명령으로 인스턴스를 생성할 수 없다.
-    //    Calendar c = new Calendar(); // 컴파일 오류!
+    // Calendar c = new Calendar(); // 컴파일 오류!
 
     // Calendar 클래스의 경우도 생성자를 protected 로 막고 있다.
     // 즉 new 명령을 통해 바로 인스턴스를 생성할 수 없다.
@@ -19,8 +19,18 @@ public class Exam0130 {
     Calendar c2 = Calendar.getInstance();
     System.out.println(c1 == c2);
 
-    System.out.println(c1.get(Calendar.MILLISECOND));
+    System.out.println(c1.get(14));
+    // 년 월 일 시:분:초:밀리초 중에서 밀리초(0~999)를 보여준다
+    //
     System.out.println(c2.get(Calendar.MILLISECOND));
+
+    System.out.println(c2.get(1));
+    // 년도를 리턴해준다.
+    //
+    // 값의 아이디를 암기하기 힘들다.
+    // 그래서 스태틱 상수에 미리 그 번호를 저장해 두었다.
+    // 
+    System.out.println(c2.get(Calendar.YEAR));
 
     // getInstance() 호출 시점의 시각이 다르기 때문에 두 객체의 주소는 다르다.
 

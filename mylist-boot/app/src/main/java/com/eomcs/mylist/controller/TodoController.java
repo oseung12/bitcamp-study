@@ -10,6 +10,10 @@ public class TodoController {
 
   ArrayList todoList = new ArrayList();
 
+  public TodoController() {
+    System.out.println("TodoController() 호출됨!");
+  }
+
   @RequestMapping("/todo/list")
   public Object list() {
     return todoList.toArray(); 
@@ -28,16 +32,15 @@ public class TodoController {
     }
 
     Todo old = (Todo) todoList.get(index);
-    todo.setDone(old.isDone());
+    todo.setDone(old.isDone()); // 기존의 체크 정보를 그대로 가져가야 한다.
 
     return todoList.set(index, todo) == null ? 0 : 1;
   }
 
-
   @RequestMapping("/todo/check")
   public Object check(int index, boolean done) {
     if (index < 0 || index >= todoList.size()) {
-      return 0; // 인덱스가 무효해서 설정하지 못했다.
+      return 0;  // 인덱스가 무효해서 설정하지 못했다.
     }
 
     ((Todo) todoList.get(index)).setDone(done);

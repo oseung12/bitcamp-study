@@ -11,6 +11,10 @@ public class BoardController {
 
   ArrayList boardList = new ArrayList();
 
+  public BoardController() {
+    System.out.println("BoardController() 호출됨!");
+  }
+
   @RequestMapping("/board/list")
   public Object list() {
     return boardList.toArray(); 
@@ -18,8 +22,8 @@ public class BoardController {
 
   @RequestMapping("/board/add")
   public Object add(Board board) {
-    board.setCreatedDate(new Date(System.currentTimeMillis()));
 
+    board.setCreatedDate(new Date(System.currentTimeMillis()));
     boardList.add(board);
     return boardList.size();
   }
@@ -30,9 +34,8 @@ public class BoardController {
     if (index < 0 || index >= boardList.size()) {
       return "";
     }
-
     Board board = (Board) boardList.get(index);
-    board.setViewCount(board.getViewCount() +1);
+    board.setViewCount(board.getViewCount() + 1);
 
     return board;
   }
@@ -47,16 +50,14 @@ public class BoardController {
     board.setViewCount(old.getViewCount());
     board.setCreatedDate(old.getCreatedDate());
 
-    return  boardList.set(index, board) == null ? 0 : 1;
+    return boardList.set(index, board) == null ? 0 : 1;
   }
 
   @RequestMapping("/board/delete")
   public Object delete(int index) {
     if (index < 0 || index >= boardList.size()) {
-      return "";
+      return 0;
     }
-
-    return  boardList.remove(index) == null ? 0 : 1;
+    return boardList.remove(index) == null ? 0 : 1;
   }
-
 }
