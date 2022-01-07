@@ -9,11 +9,8 @@ import com.eomcs.util.ArrayList;
 @RestController 
 public class BoardController {
 
+  // Board 객체 목록을 저장할 메모리를 준비한다.
   ArrayList boardList = new ArrayList();
-
-  public BoardController() {
-    System.out.println("BoardController() 호출됨!");
-  }
 
   @RequestMapping("/board/list")
   public Object list() {
