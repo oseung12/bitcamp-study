@@ -6,5 +6,7 @@ public class CalculatorTest {
 
     c.plus(100);
     c.minus(200);
+
+    System.out.println(c.result);
   }
 }
