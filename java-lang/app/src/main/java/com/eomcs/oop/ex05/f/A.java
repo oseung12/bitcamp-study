@@ -9,3 +9,5 @@ public class A {
 }
 
 
+// static  클래스가 로딩 될때 자동 실행되는 것.
+

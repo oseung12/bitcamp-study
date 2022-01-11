@@ -3,7 +3,7 @@ package com.eomcs.oop.ex05.g;
 
 public class Exam01 {
   public static void main(String[] args) {
-    C obj = new C();
+    C obj = new C();   // c의 인스턴스를 만들어라!
     System.out.printf("v1=%d, v2=%d, v3=%d\n", obj.v1, obj.v2, obj.v3);
 
     // 생성자 호출 순서
@@ -28,7 +28,9 @@ public class Exam01 {
   }
 }
 
-
+// 생성자 호출은 서브클래스부터 시작하여 수퍼클래스로 올라가고
+// 실행은 수퍼클래에서 서브클래스로 아래로 내려온다.
+// 서브클래스에서 수퍼클래스를 가장 먼저 실행한다.
 
 
 

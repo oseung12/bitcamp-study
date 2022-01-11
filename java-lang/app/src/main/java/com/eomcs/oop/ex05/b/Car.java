@@ -1,4 +1,5 @@
 // 기존 클래스에 코드를 추가한다.
+// 원본에 패키지 추가
 package com.eomcs.oop.ex05.b;
 
 public class Car {
