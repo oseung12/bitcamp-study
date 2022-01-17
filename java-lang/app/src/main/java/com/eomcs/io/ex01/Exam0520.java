@@ -17,8 +17,8 @@ public class Exam0520 {
 
     for (File file : files) {
       System.out.printf("%s   %s %12d %s\n",
-          file.isDirectory() ? "d" : "-",
-              new Date(file.lastModified()),
+          file.isDirectory() ? "d" : "-",   // 조건 연산자 => 만약에 true면 "d" false면 "-"
+              new Date(file.lastModified()),   // 마지막 저장날짜 
               file.length(),
               file.getName());
     }

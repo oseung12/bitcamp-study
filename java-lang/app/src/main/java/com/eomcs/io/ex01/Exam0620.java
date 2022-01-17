@@ -12,6 +12,7 @@ public class Exam0620 {
     class JavaFilter implements FileFilter {
       @Override
       public boolean accept(File file) {
+        // (파일 객체가 넘어온다.)
         // 이 메서드는 listFiles() 메서드에서 호출한다.
         // 지정한 폴더에 들어 있는 파일이나 디렉토리를 찾을 때 마다 호출한다.
         // 리턴 값 File[] 에 찾은 파일 정보를 포함시킬지 여부를 결정한다.

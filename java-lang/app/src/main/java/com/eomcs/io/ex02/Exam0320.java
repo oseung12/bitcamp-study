@@ -11,6 +11,7 @@ public class Exam0320 {
     // 데이터를 저장할 바이트 배열을 준비한다.
     byte[] buf = new byte[100];
 
+    // 바이너리 (pdf,아래한글,png.. 등 텍스트파일이 아닌 컴퓨터 파일 // 텍스트편집기로 읽고 수정 후 저장하면 형식이 깨지는 파일)
     // 바이너리 데이터를 읽어 배열에 저장하기
     // read(byte[])
     //   => 읽은 데이터를 바이트 배열에 채운다.
@@ -24,8 +25,8 @@ public class Exam0320 {
 
     System.out.printf("%d\n", count);
 
-    for (int i = 0; i < 20; i++)
-      System.out.printf("%02x ", buf[i]);
+    for (int i = 0; i < 100; i++)
+      System.out.printf("%d: %02x \n", i , buf[i]);
 
     System.out.println();
 

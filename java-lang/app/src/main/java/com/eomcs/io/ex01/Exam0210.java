@@ -29,7 +29,7 @@ public class Exam0210 {
     System.out.printf("파일여부: %b\n", file1.isFile());
     System.out.printf("감춤여부: %b\n", file1.isHidden());
     System.out.printf("존재여부: %b\n", file1.exists());
-    System.out.printf("실행가능여부: %b\n", file1.canExecute());
+    System.out.printf("실행가능여부: %b\n", file1.canExecute()); //접근이 가능한지 여부 확인
   }
 
 }

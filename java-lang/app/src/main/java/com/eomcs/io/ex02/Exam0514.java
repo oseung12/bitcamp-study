@@ -1,4 +1,4 @@
-// Byte Stream - 텍스트 출력 하기
+// Byte Stream - 텍스트 출력 하기(추천)
 package com.eomcs.io.ex02;
 
 import java.io.FileOutputStream;

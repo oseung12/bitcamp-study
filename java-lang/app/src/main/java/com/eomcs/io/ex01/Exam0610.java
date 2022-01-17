@@ -9,6 +9,7 @@ public class Exam0610 {
 
   public static void main(String[] args) throws Exception {
 
+    // javaFilter는 FilenameFilter(인터페이스)의 implements(규칙)에 따라서 메서드를 구현한다.
     class JavaFilter implements FilenameFilter {
       @Override
       public boolean accept(File dir/* 부모 경로 */, String name /* 파일,디렉토리 이름 */) {
@@ -20,6 +21,9 @@ public class Exam0610 {
         // true를 리턴하면 배열에 포함되고,
         // false를 리턴하면 배열에 포함되지 않는다.
 
+        // 파일, 디렉토리 이름이 t로 시작하는 경우만 리턴 배열에 포함시키다. 
+        //   if (name.startsWith("t"))
+        //
         // 파일,디렉토리 이름이 .java 로 끝나는 경우만 리턴 배열에 포함시키다.
         if (name.endsWith(".java"))
           return true; // 조회 결과에 포함시켜라!

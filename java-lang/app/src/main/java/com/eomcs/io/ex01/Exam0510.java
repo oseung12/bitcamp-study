@@ -11,7 +11,7 @@ public class Exam0510 {
     File dir = new File(".");
 
     // 현재 폴더에 있는 파일이나 하위 디렉토리 이름을 알아내기
-    String[] names = dir.list();
+    String[] names = dir.list(); //바로 직계자식까지만 찾아낸다. 
 
     for (String name : names) {
       System.out.println(name);

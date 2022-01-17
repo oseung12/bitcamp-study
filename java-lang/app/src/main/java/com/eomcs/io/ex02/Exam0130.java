@@ -18,7 +18,7 @@ public class Exam0130 {
         System.out.printf("%02x ", b);
       }
      */
-    while ((b = in.read()) != -1) {
+    while ((b = in.read()) != -1) {   //in.read()문장이 b에 들어가고 b와 -1을 비교한다.
       System.out.printf("%02x ", b);
     }
 
