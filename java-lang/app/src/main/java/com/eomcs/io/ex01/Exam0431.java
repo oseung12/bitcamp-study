@@ -12,8 +12,9 @@ public class Exam0431 {
     // 파일을 생성하기 전에 존재하지 않는 폴더를 생성하고 싶다면,
     //    String path = file.getParent(); // 해당 경로에서 앞부분 디렉토리 정보만 불러온다 //  => temp/b
     //    File dir = new File(path);
-    File dir = file.getParentFile(); // 위의 코드와 같다. // 
-    System.out.println(dir.getCanonicalPath());
+    File dir = file.getParentFile(); // 위의 코드와 같다. 
+    System.out.println(dir.getCanonicalPath());      
+    //.getCanonicalPath() : 절대경로를 리턴하지만, ./, ../와 같은 경로를 정리 후 절대경로 리턴
 
     // 먼저 디렉토리를 생성한다.
     if (dir.mkdirs()) {

@@ -15,7 +15,7 @@ public class Exam0120 {
     // 1) 이름 읽기
     int size = in.read(); // 이름이 저장된 바이트 배열의 수
     byte[] buf = new byte[size];
-    in.read(buf); // 이름 배열 개수 만큼 바이트를 읽어 배열에 저장한다.
+    in.read(buf); // 이름 배열 개수 만큼 바이트를 읽어 배열에 저장한다.  // 11바이트 읽는다.
     member.name = new String(buf, "UTF-8");
 
     // 2) 나이(int) 읽기
