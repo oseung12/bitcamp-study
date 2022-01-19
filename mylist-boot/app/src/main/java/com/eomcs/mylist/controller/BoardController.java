@@ -2,10 +2,10 @@ package com.eomcs.mylist.controller;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.sql.Date;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,22 +21,19 @@ public class BoardController {
     System.out.println("BoardController() 호출됨!");
 
 
-    DataInputStream in = new DataInputStream(new BufferedInputStream(new FileInputStream("boards.data")));
+    ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("boards.ser2")));
 
-    while (true) {
-      try {
-        Board board = new Board();
-        board.setTitle(in.readUTF());
-        board.setContent(in.readUTF());
-        board.setViewCount(in.readInt());
-        board.setCreatedDate(Date.valueOf(in.readUTF()));
+    //    while (true) {
+    //      try {
+    //        Board board = (Board) in.readObject();
+    //        boardList.add(board); 
+    //
+    //      } catch (Exception e) {
+    //        break;
+    //      }
+    //    }
 
-        boardList.add(board); 
-
-      } catch (Exception e) {
-        break;
-      }
-    }
+    boardList = (ArrayList) in.readObject();
 
     in.close();
   }
@@ -89,19 +86,16 @@ public class BoardController {
 
   @RequestMapping("/board/save")
   public Object save() throws Exception {
-    DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("boards.data")));
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("boards.ser2")));
 
-    Object[] arr = boardList.toArray();
-    for (Object obj : arr) {
-      Board board = (Board) obj;
-      out.writeUTF(board.getTitle());
-      out.writeUTF(board.getContent());
-      out.writeInt(board.getViewCount());
-      out.writeUTF(board.getCreatedDate().toString());
-    }
+    //    Object[] arr = boardList.toArray();
+    //    for (Object obj : arr) {
+    //      out.writeObject(obj);
+    //    }
 
+    out.writeObject(boardList);
     out.close();
-    return arr.length;
+    return boardList.size();
   }
 }
 
