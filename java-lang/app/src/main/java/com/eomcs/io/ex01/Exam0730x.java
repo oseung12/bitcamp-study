@@ -4,7 +4,7 @@ package com.eomcs.io.ex01;
 import java.io.File;
 import java.io.FileFilter;
 
-public class Exam0730x {
+public class Exam0730 {
 
   public static void main(String[] args) throws Exception {
 
@@ -16,28 +16,19 @@ public class Exam0730x {
 
   static void printClasses(File dir) {
 
-    class JavaClassFilter implements FileFilter{
-
+    File[] files = dir.listFiles(new FileFilter() {
       @Override
       public boolean accept(File pathname) {
-        if ((pathname.isFile() && pathname.getName().endsWith(".class")) ||
-            pathname.isDirectory()) {
-          return true;
-        }
-        return false;
+        return pathname.isDirectory() || (pathname.isFile() && pathname.getName().endsWith(".class"));
       }
-    }
+    });
 
-    File[] files = dir.listFiles();
-
-    for (File f : files) {
-      if (f.isFile() && f.getName().endsWith(".class")) {
-        System.out.println(f.getName());
-      } else if (f.isDirectory()) {
-        printClasses(f);
+    for (File file : files) {
+      if (file.isDirectory()) {
+        printClasses(file);
+      } else {
+        System.out.printf("%s\n", file.getName());
       }
     }
   }
 }
-
-
