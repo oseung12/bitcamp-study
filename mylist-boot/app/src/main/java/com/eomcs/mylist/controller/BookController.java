@@ -7,7 +7,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import com.eomcs.mylist.domain.Board;
 import com.eomcs.mylist.domain.Book;
 import com.eomcs.util.ArrayList;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,18 +24,16 @@ public class BookController {
 
       ObjectMapper mapper = new ObjectMapper();
 
-      String jsonStr = in.readLine();
+      //      String jsonStr = in.readLine();
+      //      Book[] books = mapper.readValue(jsonStr, Book[].class);
+      //      bookList = new ArrayList(books);
 
-      Board[] boards = mapper.readValue(jsonStr, Board[].class);
-
-      for (Board board : boards) {
-        bookList.add(board);
-      }
+      bookList = new ArrayList(mapper.readValue(in.readLine(), Book[].class));
 
       in.close();
 
     } catch (Exception e) {
-      System.out.println("게시글 데이터 로딩 중 오류 발생!");
+      System.out.println("독서록 데이터를 로딩하는 중 오류 발생!");
     }
   }
 
@@ -80,21 +77,10 @@ public class BookController {
   public Object save() throws Exception {
     PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("books.json")));
 
-    // JSON 형식의 문자열을 다룰 객체를 준비한다.
     ObjectMapper mapper = new ObjectMapper();
-
-    // 1) 객체를 JSON 형식의 문자열로 생성한다.
-    // => ArrayList 에서 Board 배열을 꺼낸 후 JSON 문자열로 만든다.
-    String jsonStr = mapper.writeValueAsString(bookList.toArray()); 
-
-    // 2) JSON 형식으로 바꾼 문자열을 파일로 출력한다.
-    out.println(jsonStr);
+    out.println(mapper.writeValueAsString(bookList.toArray()));
 
     out.close();
     return bookList.size();
   }
 }
-
-
-
-

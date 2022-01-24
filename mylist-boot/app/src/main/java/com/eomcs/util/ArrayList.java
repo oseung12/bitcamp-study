@@ -10,7 +10,7 @@ public class ArrayList implements java.io.Serializable {
   public ArrayList() {}
 
   public ArrayList(Object[] arr) {
-    this.addAll(arr); 
+    this.addAll(arr);
   }
 
 

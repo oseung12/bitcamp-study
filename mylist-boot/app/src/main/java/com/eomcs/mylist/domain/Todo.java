@@ -12,7 +12,7 @@ public class Todo implements java.io.Serializable {
     // 예) csvStr => "제목,완료여부"
 
     String[] values = csvStr.split(","); 
-    this.setTitle(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다.
+    this.setTitle(values[0]); 
     this.setDone(Boolean.valueOf(values[1]));
   }
 
@@ -27,10 +27,10 @@ public class Todo implements java.io.Serializable {
   public static Todo valueOf(String csvStr) {
     // 예) csvStr => "제목,완료여부"
 
-    String[] values = csvStr.split(","); //
+    String[] values = csvStr.split(",");
 
     Todo todo = new Todo();
-    todo.setTitle(values[0]); // 배열에 들어 있는 각 항목을 객체의 필드에 저장한다.
+    todo.setTitle(values[0]); 
     todo.setDone(Boolean.valueOf(values[1]));
 
     return todo;
@@ -62,6 +62,5 @@ public class Todo implements java.io.Serializable {
   public String toString() {
     return "Todo [title=" + title + ", done=" + done + "]";
   }
-
 
 }

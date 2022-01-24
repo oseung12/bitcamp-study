@@ -8,6 +8,7 @@ import java.io.PrintWriter;
 import java.sql.Date;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.eomcs.mylist.dao.CsvBoardDao;
 import com.eomcs.mylist.domain.Board;
 import com.eomcs.util.ArrayList;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -15,7 +16,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 @RestController 
 public class BoardController {
 
-  ArrayList boardList = new ArrayList();
+  CsvBoardDao boardDao = new CsvBoardDao();
 
   public BoardController() {
     System.out.println("BoardController() 호출됨!");
@@ -35,8 +36,16 @@ public class BoardController {
       Board[] boards = mapper.readValue(jsonStr, Board[].class);
 
       // 3) 배열 객체를 ArrayList 에 저장한다.
+      // => 다음과 같이 배열에서 한 개씩 꺼내 목록에 추가할 수 있다.
+      //      for (Board board : boards) {
+      //        boardList.add(board);
+      //      }
 
-      boardList.addAll(boards);
+      // => 다음과 같이 addAll()을 호출하여 배열을 목록에 추가할 수 있다.
+      //      boardList.addAll(boards);
+
+      // => 다음과 같이 생성자를 통해 배열을 목록에 추가할 수 있다.
+      boardList = new ArrayList(boards);
 
       in.close();
 

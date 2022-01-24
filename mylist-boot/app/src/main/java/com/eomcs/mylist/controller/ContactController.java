@@ -1,17 +1,15 @@
 package com.eomcs.mylist.controller;
 
-import java.io.BufferedInputStream;
+import java.io.BufferedReader;
 import java.io.BufferedWriter;
-import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
-import java.io.ObjectInputStream;
 import java.io.PrintWriter;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.eomcs.mylist.domain.Contact;
 import com.eomcs.util.ArrayList;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 
 @RestController 
 public class ContactController {
@@ -23,10 +21,13 @@ public class ContactController {
     System.out.println("ContactController() 호출됨!");
 
     try {
-      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream("contacts.json")));
+      BufferedReader in = new BufferedReader(new FileReader("contacts.json"));
 
-      contactList = (ArrayList) in.readObject();
+      ObjectMapper mapper = new ObjectMapper();
+      contactList = new ArrayList(mapper.readValue(in.readLine(), Contact[].class));
+
       in.close();
+
     } catch (Exception e) {
       System.out.println("연락처 데이터를 로딩하는 중에 오류 발생!");
     }
@@ -79,15 +80,8 @@ public class ContactController {
   public Object save() throws Exception {
     PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("contacts.json")));
 
-    // JSON 형식의 문자열을 다룰 객체를 준비한다.
     ObjectMapper mapper = new ObjectMapper();
-
-    // 1) 객체를 JSON 형식의 문자열로 생성한다.
-    // => ArrayList 에서 Board 배열을 꺼낸 후 JSON 문자열로 만든다.
-    String jsonStr = mapper.writeValueAsString(contactList.toArray()); 
-
-    // 2) JSON 형식으로 바꾼 문자열을 파일로 출력한다.
-    out.println(jsonStr);
+    out.println(mapper.writeValueAsString(contactList.toArray()));
 
     out.close();
     return contactList.size();
@@ -103,4 +97,3 @@ public class ContactController {
     return -1;
   }
 }
-
