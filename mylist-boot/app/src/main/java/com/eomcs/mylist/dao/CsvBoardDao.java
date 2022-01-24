@@ -1,74 +1,76 @@
-package com.eomcs.mylist.controller;
+package com.eomcs.mylist.dao;
 
-import java.sql.Date;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.PrintWriter;
 import com.eomcs.mylist.domain.Board;
+import com.eomcs.util.ArrayList;
 
-@RestController 
-public class BoardController {
+public class CsvBoardDao {
+  ArrayList boardList = new ArrayList();
 
-  CsvBoardDao boardDao;
-
-  public BoardController() {
-    System.out.println("BoardController() 호출됨!");
-
+  public CsvBoardDao() {
     try {
-      boardDao = new CsvBoardDao();
+      BufferedReader in = new BufferedReader(new FileReader("boards.csv"));
+
+      String csvStr;
+      while ((csvStr = in.readLine()) != null) {
+        boardList.add(Board.valueOf(csvStr)); 
+      }
+
+      in.close();
     } catch (Exception e) {
       System.out.println("게시글 데이터 로딩 중 오류 발생!");
     }
   }
 
-  @RequestMapping("/board/list")
-  public Object list() {
-    return boardList.toArray(); 
+  public void save() throws Exception {
+    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("boards.csv")));
+
+    for (int i = 0; i < boardList.size(); i++) {
+      Board board = (Board) boardList.get(i);
+      out.println(board.toCsvString());
+    }
+    out.flush();
+
+    out.close();
   }
 
-  @RequestMapping("/board/add")
-  public Object add(Board board) {
-
-    board.setCreatedDate(new Date(System.currentTimeMillis()));
-    boardList.add(board);
+  public int countAll() {
     return boardList.size();
   }
 
-
-  @RequestMapping("/board/get")
-  public Object get(int index) {
-    if (index < 0 || index >= boardList.size()) {
-      return "";
-    }
-    Board board = (Board) boardList.get(index);
-    board.setViewCount(board.getViewCount() + 1);
-
-    return board;
+  public Object[] findAll() {
+    return boardList.toArray();
   }
 
-  @RequestMapping("/board/update")
-  public Object update(int index, Board board) {
-    if (index < 0 || index >= boardList.size()) {
+  public void insert(Board board) {
+    boardList.add(board);
+  }
+
+  public Board findByNo(int no) {
+    if (no < 0 || no >= boardList.size()) {
+      return null;
+    }
+    return (Board) boardList.get(no);
+  }
+
+  public int update(int no, Board board) {
+    if (no < 0 || no >= boardList.size()) {
       return 0;
     }
-
-    Board old = (Board) boardList.get(index);
-    board.setViewCount(old.getViewCount());
-    board.setCreatedDate(old.getCreatedDate());
-
-    return boardList.set(index, board) == null ? 0 : 1;
+    boardList.set(no, board);
+    return 1;
   }
 
-  @RequestMapping("/board/delete")
-  public Object delete(int index) {
-    if (index < 0 || index >= boardList.size()) {
+  public int delete(int no) {
+    if (no < 0 || no >= boardList.size()) {
       return 0;
     }
-    return boardList.remove(index) == null ? 0 : 1;
+    boardList.remove(no);
+    return 1;
   }
 
-  @RequestMapping("/board/save")
-  public Object save() throws Exception {
-    boardDao.save();
-    return boardDao.countAll();
-  }
 }
