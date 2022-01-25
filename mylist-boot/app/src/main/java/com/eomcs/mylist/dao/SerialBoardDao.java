@@ -1,25 +1,23 @@
 package com.eomcs.mylist.dao;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import com.eomcs.mylist.domain.Board;
 import com.eomcs.util.ArrayList;
 
-public class CsvBoardDao {
-  ArrayList boardList = new ArrayList();
+public class SerialBoardDao {
 
-  public CsvBoardDao() {
+  String filename = "boards.ser";
+  ArrayList boardList = new ArrayList(); // 변수 선언 = 변수를 만들라는 명령!
+
+  public SerialBoardDao() {
     try {
-      BufferedReader in = new BufferedReader(new FileReader("boards.csv"));
-
-      String csvStr;
-      while ((csvStr = in.readLine()) != null) {
-        boardList.add(Board.valueOf(csvStr)); 
-      }
-
+      ObjectInputStream in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(filename)));
+      boardList = (ArrayList) in.readObject();
       in.close();
     } catch (Exception e) {
       System.out.println("게시글 데이터 로딩 중 오류 발생!");
@@ -27,14 +25,10 @@ public class CsvBoardDao {
   }
 
   private void save() throws Exception {
-    PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter("boards.csv")));
+    ObjectOutputStream out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(filename)));
 
-    for (int i = 0; i < boardList.size(); i++) {
-      Board board = (Board) boardList.get(i);
-      out.println(board.toCsvString());
-    }
+    out.writeObject(boardList);
     out.flush();
-
     out.close();
   }
 
@@ -46,7 +40,7 @@ public class CsvBoardDao {
     return boardList.toArray();
   }
 
-  public void insert(Board board) throws Exception{
+  public void create(Board board) throws Exception {
     boardList.add(board);
     save();
   }
@@ -58,7 +52,7 @@ public class CsvBoardDao {
     return (Board) boardList.get(no);
   }
 
-  public int update(int no, Board board) throws Exception{
+  public int modify(int no, Board board) throws Exception {
     if (no < 0 || no >= boardList.size()) {
       return 0;
     }
@@ -78,7 +72,8 @@ public class CsvBoardDao {
 
   public void increaseViewCount(int no) throws Exception {
     Board board = findByNo(no);
-    board.setViewCount(board.getViewCount() +1);
+    board.setViewCount(board.getViewCount() + 1);
     save();
   }
 }
+
