@@ -27,6 +27,7 @@ public class Exam01 {
     int[] values = createRandomNumbers(100000);
     int[] values2 = Arrays.copyOf(values, values.length);
 
+
     BubbleSort s1 = new BubbleSort();
     QuickSort s2 = new QuickSort();
 
