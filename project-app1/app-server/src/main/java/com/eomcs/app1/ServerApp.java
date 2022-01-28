@@ -13,12 +13,13 @@ public class ServerApp {
 
     while (true) {
       System.out.println("클라이언트의 연결을 기다림!");
-      Socket socket = serverSocket.accept(); // 클라이언트가 연결될 때까지 리턴하지 않는다.
+      Socket socket = serverSocket.accept(); 
       System.out.println("클라이언트와 연결됨!");
 
       // 클라이언트의 요청을 처리할 작업자를 만든다.
       Worker worker = new Worker(socket);
       worker.start(); // 작업자에게 일을 시킨 후 즉시 리턴한다.
+      System.out.println("작업자에게 클라이언트 요청을 맡겼음!");
     }
 
     // 서버쪽 연결 도구 종료!
