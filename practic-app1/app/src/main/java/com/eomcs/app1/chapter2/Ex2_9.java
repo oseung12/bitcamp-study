@@ -1,3 +1,4 @@
+// printf() 를 이용하여 출력
 package com.eomcs.app1.chapter2;
 
 public class Ex2_9 {
@@ -32,3 +33,4 @@ public class Ex2_9 {
 // %s : 문자열로 출력
 // %e : 지수 형태로 출력
 // %g : 값을 간략하게 표현할 때 사용
+
