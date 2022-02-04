@@ -14,7 +14,7 @@ public class Exam0450 {
   public static void main(String[] args) {
     // 다음과 같이 작은 수를 계산 할 때는 재귀호출을 사용하는 것이
     // 코드도 간단하고 이해하기도 쉽다.
-    System.out.println(sum(5));
+    System.out.println(sum(500000));
   }
 }
 // JVM Stack 메모리의 사용
@@ -43,5 +43,3 @@ public class Exam0450 {
 //   재귀호출을 할 때 스택오버플로우가 자주 발생한다.
 // - 메서드 호출이 너무 깊게 들어가지 않는 상황에서 재귀호출을 사용하라.
 //
-
-
