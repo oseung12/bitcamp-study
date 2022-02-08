@@ -10,7 +10,7 @@ public class Exam01 {
     // => [프로토콜]://서버주소:포트번호/자원의경로?파라미터명=값&파라미터명=값
     // - 프로토콜: http(80), https(443), ftp(21/20) 등
     // - 서버주소: IP 주소(192.168.0.1), 도메인명(www.bitcamp.co.kr)
-    // - 포트번호: 80(생략할 수 있다), 8080(프록시 서버) 등
+    // - 포트번호: 80 또는 443(같은 포트 번호일 경우 생략할 수 있다), 8080(프록시 서버) 등
     // - 자원의경로: /index.html, /board/list.jsp 등
     // - 서버에 보내는 파라미터(Query String): 파라미터명=값&파라미터명=값
     //
@@ -21,9 +21,12 @@ public class Exam01 {
     // - 동적 자원(dynamic)
     //   - 요청할 때 마다 결과 콘텐트가 변할 수 있는 자원. 
     //   - 메일 조회, 게시물 변경, 주문 등의 웹 프로그램을 가리킨다.
-    //   - 예) index.php, index.jsp 등
+    //   - 예) index.php, index.jsp, /board/list 등
     //
-    URL url = new URL("https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query=bitcamp");
+    // URL 객체 :  URL 정보를 다루는 객체
+    URL url = new URL("https://search.naver.com:443/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query=bitcamp");
+    // http://auction.co.kr:80/  (:80 포트번호 생략 가능)
+    // https://www.naver.com:443/ (:443 포트번호 생략 가능)
 
     // URL 분석
     System.out.printf("프로토콜: %s\n", url.getProtocol());
