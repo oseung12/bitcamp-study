@@ -12,7 +12,7 @@ public class Exam0330 {
   }
 
   public static void main(String[] args) {
-    // 여러 문장을 실행하는 경우 블록 {}으로 감싸라!
+    // 여러 문장을 실행하는 경우 블록 {}으로 감싸라! (블록 생략 불가능!)
     test((a, b) -> {
       int sum = 0;
       for (int i = a; i <= b; i++) {

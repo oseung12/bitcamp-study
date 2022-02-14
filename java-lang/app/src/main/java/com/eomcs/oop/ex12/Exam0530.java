@@ -66,7 +66,7 @@ public class Exam0530 {
 
 
     // 리턴 타입 int ===> short
-    //    Calculator3 c3 = MyCalculator::plus; // 컴파일 오류!
+    //        Calculator3 c3 = MyCalculator::plus; // 컴파일 오류!
     // 위 문장은 다음과 같다.
     //    Calculator3 c3 = new Calculator3() {
     //      @Override

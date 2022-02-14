@@ -12,7 +12,7 @@ public class Exam0230 {
 
     default void stop() {}
 
-    void play();
+    void play();  // 추상 메서드
   }
 
   public static void main(String[] args) {
