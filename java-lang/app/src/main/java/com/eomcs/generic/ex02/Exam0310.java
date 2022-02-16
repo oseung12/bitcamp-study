@@ -17,7 +17,7 @@ public class Exam0310 {
 
     System.out.println(map.get("aaa"));
     System.out.println(map.get(100));
-    System.out.println("---------------------------------");
+    System.out.println("------------------------------------------");
 
     // 위와 같이 제네릭 정보를 넘기지 않는 것 보다,
     // 차라리 다음과 같이 명확하게 Object 타입을 지정하는 것이 좋다. 
@@ -39,11 +39,3 @@ public class Exam0310 {
 
   }
 }
-
-
-
-
-
-
-
-
