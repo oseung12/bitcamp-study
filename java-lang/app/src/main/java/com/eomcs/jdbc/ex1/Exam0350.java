@@ -17,7 +17,8 @@ public class Exam0350 {
       // => 리턴 값: 변경된 레코드의 개수이다.
       int count = stmt.executeUpdate( 
           "update x_board set view_count = view_count + 1"
-              + " where board_id = 4");
+              + " where board_id = 4");   //1개 변경 성공!
+      //        + " where board_id < 100"); // 100개 이하의 모든 데이터 변경 성공!
       System.out.printf("%d 개 변경 성공!", count);
     }
   }
