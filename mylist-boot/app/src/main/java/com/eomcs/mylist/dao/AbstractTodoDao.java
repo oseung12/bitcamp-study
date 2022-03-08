@@ -1,7 +1,7 @@
 package com.eomcs.mylist.dao;
 
+import java.util.ArrayList;
 import com.eomcs.mylist.domain.Todo;
-import com.eomcs.util.ArrayList;
 
 // 서브 클래스의 공통 분모를 추출하여 수퍼 클래스를 정의할 경우,
 // - 보통 이런 수퍼 클래스는 직접 사용하려고 만든 클래스가 아니다.
@@ -12,7 +12,7 @@ import com.eomcs.util.ArrayList;
 // 
 public abstract class AbstractTodoDao implements TodoDao {
 
-  protected ArrayList todoList = new ArrayList(); 
+  protected ArrayList<Todo> todoList = new ArrayList<>(); 
 
   protected abstract void save() throws Exception;
 
@@ -37,7 +37,7 @@ public abstract class AbstractTodoDao implements TodoDao {
     if (no < 0 || no >= todoList.size()) {
       return null;
     }
-    return (Todo) todoList.get(no);
+    return todoList.get(no);
   }
 
   @Override
@@ -55,7 +55,7 @@ public abstract class AbstractTodoDao implements TodoDao {
     if (no < 0 || no >= todoList.size()) {
       return 0;
     }
-    ((Todo) todoList.get(no)).setDone(done);
+    todoList.get(no).setDone(done);
     save();
     return 1;
   }
