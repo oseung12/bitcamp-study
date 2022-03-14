@@ -18,7 +18,7 @@ public class BoardController {
 
   @RequestMapping("/board/list")
   public Object list() {
-    return boardDao.findAll(); 
+    return boardDao.findAll();
   }
 
   @RequestMapping("/board/add")

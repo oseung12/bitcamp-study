@@ -48,10 +48,10 @@ public class App {
   public SqlSessionFactory sqlSessionFactory(DataSource dataSource) throws Exception {
     SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
 
-    //1) SQL을 실행할 때 사용할 DB커넥션 풀을 주입한다.
-    sqlSessionFactoryBean.setDataSource(dataSource);
+    // 1) SQL을 실행할 때 사용할 DB 커넥션풀을 주입한다.
+    sqlSessionFactoryBean.setDataSource(dataSource); 
 
-    //2) SQL 문이 들어 있는 파일의 위치를 설정한다.
+    // 2) SQL 문이 들어 있는 파일의 위치를 설정한다.
     PathMatchingResourcePatternResolver resourceResolver = new PathMatchingResourcePatternResolver();
     sqlSessionFactoryBean.setMapperLocations(resourceResolver.getResources("classpath:com/eomcs/mylist/dao/*.xml"));
 
