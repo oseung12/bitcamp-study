@@ -1,6 +1,8 @@
 -- mysql
 mysql -h 52.79.247.137 -u pompeu -p
 
+delete from party where party_no=1 or party_no=2 or party_no=3 or party_no=4 or party_no=5 or party_no=7;
+
 -- 지역
 insert into location(do,gu,address) values('서울특별시','광진구','군자동 천호대로109길 9 리아리움더언타워 레드포인트클라이밍');
 insert into location(do,gu,address) values('인천광역시','계양구','봉오대로 855 계양체육관');
@@ -10,15 +12,17 @@ insert into location(do,gu,address) values('광주광역시','남구','효덕동
 
 -- 소모임
 insert into party(location_no,name,content,start_date,end_date,max_member,in_out_ex,register_date)
-values(9,'클라이밍 함께 즐겨요','언제든지 즐길 수 있는 실내 클라이밍 함께 시작해요. 실내 클라이밍에 필요한 준비물품은 대여도 가능합니다.','2022-03-15 14:00','2022-03-13 23:00',6,1,now());
+values(9,'클라이밍 함께 즐겨요','언제든지 즐길 수 있는 실내 클라이밍 함께 시작해요. 실내 클라이밍에 필요한 준비물품은 대여도 가능합니다.','2022-03-15 14:00','2022-03-13 23:00',6,'1',now());
 insert into party(location_no,name,content,start_date,end_date,max_member,in_out_ex,register_date)
-values(10,'어쩌다 배구','일상의 모든 스트레스를 배구공으로 날려버리는 배구 소모임 시작해요 남녀노소 배구를 즐기고 싶으신 분들 환영합니다.','2022-03-19 19:00','2022-03-18 14:00',8,1,now());
+values(10,'어쩌다 배구','일상의 모든 스트레스를 배구공으로 날려버리는 배구 소모임 시작해요 남녀노소 배구를 즐기고 싶으신 분들 환영합니다.','2022-03-19 19:00','2022-03-18 14:00',8,'1',now());
 insert into party(location_no,name,content,start_date,end_date,max_member,in_out_ex,register_date)
-values(11,'러닝크루 정규런','야간 러닝크루 모집합니다. 매주 정규런을 계획하고있지만 하루 도전해보셔도 괜찮습니다.','2022-03-25 19:00','2022-03.24 20:00',6,2,now());
+values(11,'러닝크루 정규런','야간 러닝크루 모집합니다. 매주 정규런을 계획하고있지만 하루 도전해보셔도 괜찮습니다.','2022-03-25 19:00','2022-03.24 20:00',6,'2',now());
 insert into party(location_no,name,content,start_date,end_date,max_member,in_out_ex,register_date)
-values(12,'우리동네 탁구 함께 해요','우리 동네에서 함께 탁구하실 분들 환영합니다. 기초가 없으신 분들도 시작하실수 있으세요','2022-04-03 11:00','2022-04-01 21:00',4,1,now());
+values(12,'우리동네 탁구 함께 해요','우리 동네에서 함께 탁구하실 분들 환영합니다. 기초가 없으신 분들도 시작하실수 있으세요','2022-04-03 11:00','2022-04-01 21:00',4,'1',now());
 insert into party(location_no,name,content,start_date,end_date,max_member,in_out_ex,register_date)
-values(13,'테니스 즐기기','실외에서 즐기는 테니스 혼자가 아닌 같이 재미있게 운동해요','2022-04-09 10:00','2022-04-08 11:00',4,2,now());
+values(13,'테니스 즐기기','실외에서 즐기는 테니스 혼자가 아닌 같이 재미있게 운동해요','2022-04-09 10:00','2022-04-08 11:00',4,'2',now());
+insert into party(location_no,name,content,start_date,end_date,max_member,in_out_ex,register_date)
+values(13,'축구','다같이 모여서 우승해요','2022-04-09 10:00','2022-04-08 11:00',4,'2',now());
 
 -- 소모임이미지
 insert into party_image(party_no, image) values(7,'run.jpg');
