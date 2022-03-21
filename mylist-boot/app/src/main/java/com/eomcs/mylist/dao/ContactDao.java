@@ -8,7 +8,7 @@ import com.eomcs.mylist.domain.ContactTel;
 @Mapper
 public interface ContactDao {
 
-  int countAll(); // ==> <select id="com.eomcs.mylist.dao.ContactDao.countAll">...</select> 
+  int countAll(); 
 
   List<Contact> findAll();
 
@@ -24,12 +24,14 @@ public interface ContactDao {
 
   int delete(int no);
 
-  List<ContactTel> findByContactNo(int contactNo);
+  List<ContactTel> findTelByContactNo(int contactNo);
 
   int insertTel(ContactTel tel);
 
   int updateTel(ContactTel tel);
 
-  int deleteTel (int telNo);
+  int deleteTel(int telNo);
 
+  int deleteTelByContactNo(int contactNo);
 }
+

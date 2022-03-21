@@ -15,7 +15,6 @@ public class Contact {
     return "Contact [no=" + no + ", name=" + name + ", email=" + email + ", company=" + company
         + ", tels=" + tels + "]";
   }
-
   public int getNo() {
     return no;
   }
@@ -46,7 +45,4 @@ public class Contact {
   public void setTels(List<ContactTel> tels) {
     this.tels = tels;
   }
-
-
-
 }

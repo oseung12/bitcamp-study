@@ -6,12 +6,23 @@ public class ContactTel {
   int telTypeNo;
   String tel;
 
+  public ContactTel() {}
+
+  public ContactTel(int telTypeNo, String tel) {
+    this.telTypeNo = telTypeNo;
+    this.tel = tel;
+  }
+
+  public ContactTel(int contactNo, int telTypeNo, String tel) {
+    this(telTypeNo, tel);
+    this.contactNo = contactNo;
+  }
+
   @Override
   public String toString() {
     return "ContactTel [no=" + no + ", contactNo=" + contactNo + ", telTypeNo=" + telTypeNo
         + ", tel=" + tel + "]";
   }
-
   public int getNo() {
     return no;
   }
@@ -36,6 +47,4 @@ public class ContactTel {
   public void setTel(String tel) {
     this.tel = tel;
   }
-
-
 }

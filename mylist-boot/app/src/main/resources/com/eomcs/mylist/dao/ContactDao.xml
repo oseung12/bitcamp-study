@@ -13,12 +13,10 @@
   </resultMap>
   
   <resultMap type="contactTel" id="contactTelMap">
-  <id column="ct_no" property="no"/>
-  <result column="contact_no" property="contactNo"/>
-  <result column="tt_no" property="telTyoeNo"/>
-  <result column="tel" property="tel"/>
-  
-    
+    <id column="ct_no" property="no"/>
+    <result column="contact_no" property="contactNo"/>
+    <result column="tt_no" property="telTypeNo"/>
+    <result column="tel" property="tel"/>
   </resultMap>
 
   <select id="countAll" resultType="int">
@@ -37,7 +35,8 @@
       name asc
   </select>
   
-  <insert id="insert" parameterType="contact">
+  <!-- 자동 증가된 PK 값을 받고 싶을 때! -->
+  <insert id="insert" parameterType="contact" keyProperty="no" keyColumn="contact_no" useGeneratedKeys="true">
     insert into ml_contact(name,email,company) 
     values(#{name},#{email},#{company})
   </insert>
@@ -92,35 +91,40 @@
     where contact_no=#{no}
   </delete>
 
-  <select id="findByContactNo" parameterType="int" resultMap="contactTelMap">
-	  select
-	    ct_no,
-	    contact_no,
-	    tt_no,
-	    tel
-	  from
-	    ml_cont_tel
-	  where
-	    contact_no=#{no}
+  <select id="findTelByContactNo" 
+          parameterType="int" resultMap="contactTelMap">
+    select 
+      ct_no,
+      contact_no,
+      tt_no,
+      tel
+    from 
+      ml_cont_tel
+    where
+      contact_no=#{no}
   </select>
-  
+
   <insert id="insertTel" parameterType="contactTel">
-	  insert into ml_cont_tel(contact_no, tt_no, tel)
-	  values(#{contactNo}, #{telTypeNo}, #{tel})  
+    insert into ml_cont_tel(contact_no, tt_no, tel)
+    values(#{contactNo}, #{telTypeNo}, #{tel}) 
   </insert>
   
   <update id="updateTel" parameterType="contactTel">
     update ml_cont_tel set
       tt_no=#{telTypeNo},
       tel=#{tel}
-    where
+    where 
       ct_no=#{no}
   </update>
   
   <delete id="deleteTel" parameterType="int">
-    delete from ml_cont_tel
+    delete from ml_cont_tel 
     where ct_no=#{no}
   </delete>
-
+  
+  <delete id="deleteTelByContactNo" parameterType="int">
+    delete from ml_cont_tel 
+    where contact_no=#{no}
+  </delete>
+  
 </mapper>
-
