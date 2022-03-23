@@ -3,7 +3,6 @@ package com.eomcs.mylist.service;
 import java.util.List;
 import com.eomcs.mylist.domain.Contact;
 
-
 public interface ContactService {
 
   int add(Contact contact);
@@ -15,7 +14,6 @@ public interface ContactService {
   int update(Contact contact);
 
   int delete(int no);
-
 }
 
 
