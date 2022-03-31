@@ -12,7 +12,7 @@ import com.eomcs.mylist.service.ContactService;
 public class ContactController {
 
   @Autowired
-  ContactService contactService; //클래스 대신 인터페이스를 지정한다.
+  ContactService contactService; // 클래스 대신 인터페이스를 지정한다.
 
   @RequestMapping("/contact/list")
   public Object list() {
