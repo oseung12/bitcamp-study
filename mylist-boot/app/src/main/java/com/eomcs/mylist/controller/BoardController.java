@@ -3,6 +3,8 @@ package com.eomcs.mylist.controller;
 import static com.eomcs.mylist.controller.ResultMap.FAIL;
 import static com.eomcs.mylist.controller.ResultMap.SUCCESS;
 import javax.servlet.http.HttpSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,21 +15,30 @@ import com.eomcs.mylist.service.BoardService;
 @RestController 
 public class BoardController {
 
+  // log를 출력하는 도구 준비
+  private static final Logger log = LoggerFactory.getLogger(BoardController.class);
+
   @Autowired
   BoardService boardService;
 
   @RequestMapping("/board/list")
   public Object list() {
+    log.error("errpr.....");
+    log.warn("warn.....");
+    log.info("info.....");
+    log.debug("debug.....");
+    log.trace("debug.....");
+
+    log.info("게실물 목록 조회!");
     return new ResultMap().setStatus(SUCCESS).setData(boardService.list());
   }
 
   @RequestMapping("/board/add")
   public Object add(Board board, HttpSession session) {
-    Member member = (Member) session.getAttribute("loginUser");
-    if (member == null) {
-      return new ResultMap().setStatus(FAIL).setData("로그인 하지 않았습니다.");
-    }
+    log.info("게시글 등록!"); // 운영자가 확인하기를 원하는 정보
+    log.debug(board.toString()); // 개발자가 확인하기를 원하는 정보
 
+    Member member = (Member) session.getAttribute("loginUser");
     board.setWriter(member);
     boardService.add(board);
     return new ResultMap().setStatus(SUCCESS);
@@ -46,10 +57,6 @@ public class BoardController {
   @RequestMapping("/board/update")
   public Object update(Board board, HttpSession session) {
     Member member = (Member) session.getAttribute("loginUser");
-    if (member == null) {
-      return new ResultMap().setStatus(FAIL).setData("로그인 하지 않았습니다.");
-    }
-
     board.setWriter(member);
     int count = boardService.update(board);
 
@@ -63,10 +70,6 @@ public class BoardController {
   @RequestMapping("/board/delete")
   public Object delete(int no, HttpSession session) {
     Member member = (Member) session.getAttribute("loginUser");
-    if (member == null) {
-      return new ResultMap().setStatus(FAIL).setData("로그인 하지 않았습니다.");
-    }
-
     Board board = new Board();
     board.setNo(no);
     board.setWriter(member);
@@ -80,7 +83,3 @@ public class BoardController {
     }
   }
 }
-
-
-
-

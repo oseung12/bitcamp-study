@@ -27,11 +27,11 @@
         return response.json();
       })
       .then(function(result) {
-        	console.log(result);
+        console.log(result);
         if (result.status == "success") {
           location.href = "?content=/board/index.html";
         } else {
-          window.alert(result.data);
+          alert(result.data);
         }
       });
   };

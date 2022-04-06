@@ -38,13 +38,3 @@ public interface ContactDao {
   int deleteTelByContactNo(int contactNo);
 }
 
-
-
-
-
-
-
-
-
-
-

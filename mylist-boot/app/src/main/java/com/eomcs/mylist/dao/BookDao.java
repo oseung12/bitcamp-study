@@ -19,4 +19,3 @@ public interface BookDao {
 
   int delete(int no);
 }
-

@@ -27,14 +27,3 @@ public interface BoardDao {
 
   int increaseViewCount(int no);
 }
-
-
-
-
-
-
-
-
-
-
-
