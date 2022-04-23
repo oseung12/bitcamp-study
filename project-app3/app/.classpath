@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="output" path="bin/default"/>
 	<classpathentry output="bin/main" kind="src" path="src/main/java">
 		<attributes>
 			<attribute name="gradle_scope" value="main"/>
@@ -13,22 +12,9 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry output="bin/test" kind="src" path="src/test/java">
-		<attributes>
-			<attribute name="gradle_scope" value="test"/>
-			<attribute name="gradle_used_by_scope" value="test"/>
-			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry output="bin/test" kind="src" path="src/test/resources">
-		<attributes>
-			<attribute name="gradle_scope" value="test"/>
-			<attribute name="gradle_used_by_scope" value="test"/>
-			<attribute name="test" value="true"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
+	<classpathentry kind="output" path="bin/default"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-11/"/>
 	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/2f5877ef15adb721421e80f5aa2b6fe069eec8ed/jstl-1.2-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/javax.servlet/jstl/1.2/74aca283cd4f4b4f3e425f5820cda58f44409547/jstl-1.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -42,6 +28,24 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.5.9/f1f73896d2fdcaa2fb8b2f75c2505c26f06da56a/mybatis-3.5.9-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis/3.5.9/991a4095dbb95d929dfe0a18a69692fd4c614e/mybatis-3.5.9.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.19/f41c072458306ff232e4f001d9cac08a1c9e8966/spring-webmvc-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-webmvc/5.3.19/ba2fc03a3bcc925458e1179ef88f5833fb1971d/spring-webmvc-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.3.19/e4c77702de88857f0b2b9c81dc988ca08feca1a4/spring-jdbc-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jdbc/5.3.19/5c3e68d0508d7562cfec085521539bb2d02ec5a7/spring-jdbc-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis-spring/2.0.7/e88bbf172f759b8546192cb5f489b83a6bc556ff/mybatis-spring-2.0.7-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.mybatis/mybatis-spring/2.0.7/f10e399232df99280df56d39662c00ea33756112/mybatis-spring-2.0.7.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
@@ -63,6 +67,48 @@
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.nondependency" value=""/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.19/8574ed7642b2890899015547c2450f725dcfe3dc/spring-context-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-context/5.3.19/d663259767f8fb66229209db0422d65978235525/spring-context-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.19/dfebf4906dba4724b71aac98c99fd302b9968c68/spring-aop-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-aop/5.3.19/339b0ad295a7af51ac716bd89d36a4fb0febaf5d/spring-aop-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.19/1c923e9c4cbea7955403ce61b165c696ca3aba01/spring-web-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-web/5.3.19/cdffc649d28d360d5891244e45277aa135ac647d/spring-web-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.19/5012f865c3220c3b80507c695fc79f41d84788c2/spring-tx-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-tx/5.3.19/f0b442718e67000845e8662ea10f138d7c47a3ae/spring-tx-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.19/538595499ddeaba8602253dfb193b1f33dbcac53/spring-beans-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-beans/5.3.19/4bc68c392ed320c9ab5dc439d7f2deb83f03fe76/spring-beans-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.19/2d7471464aef38e971a8cd23827d9edccf8ade25/spring-expression-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-expression/5.3.19/14346b7b84721f61d2b23d3c8baa60c6655527a6/spring-expression-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.19/1fea134126c57623b2e7cec144d52efce827bfad/spring-core-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-core/5.3.19/344ff3b291d7fdfdb08e865f26238a6caa86acc5/spring-core-5.3.19.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1d064e61aad6c51cc77f9b59dc2cccc78e792f5a/failureaccess-1.0.1-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/com.google.guava/failureaccess/1.0.1/1dcf1de382a0bf95a3d8b0849546c88bac1292c9/failureaccess-1.0.1.jar">
@@ -96,6 +142,12 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/d26c56180205cbb50447c3eca98ecb617cf9f58b/j2objc-annotations-1.3-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.3/ba035118bc8bac37d7eff77700720999acd9986d/j2objc-annotations-1.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.19/e8f9647856e373221082732b98baf14297dd898c/spring-jcl-5.3.19-sources.jar" kind="lib" path="C:/Users/osung/.gradle/caches/modules-2/files-2.1/org.springframework/spring-jcl/5.3.19/eae3d8b8728133782d9e41f9b3ecbd19a4146114/spring-jcl-5.3.19.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
