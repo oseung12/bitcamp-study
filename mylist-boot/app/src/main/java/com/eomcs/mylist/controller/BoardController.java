@@ -12,7 +12,7 @@ import com.eomcs.mylist.domain.Board;
 import com.eomcs.mylist.domain.Member;
 import com.eomcs.mylist.service.BoardService;
 
-@RestController 
+@RestController
 public class BoardController {
 
   // log를 출력하는 도구 준비
@@ -56,10 +56,13 @@ public class BoardController {
 
   @RequestMapping("/board/update")
   public Object update(Board board, HttpSession session) {
+    // 로그인 한 사용자만이 등록이 가능하다.
     Member member = (Member) session.getAttribute("loginUser");
+
     board.setWriter(member);
     int count = boardService.update(board);
-
+   // 자신이 작성한 글만 업데이트가 가능하다.
+   // 업데이트 하면 count == 1
     if (count == 1) {
       return new ResultMap().setStatus(SUCCESS);
     } else {
@@ -74,6 +77,7 @@ public class BoardController {
     board.setNo(no);
     board.setWriter(member);
 
+    // 자신이 작성한 글만 삭제가 가능하다.
     int count = boardService.delete(board);
 
     if (count == 1) {
