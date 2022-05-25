@@ -18,7 +18,6 @@
 </div>
 
 <div id="content">
-
 <h1>게시글 상세4(+ JSP 액션 태그 + JSTL + EL)</h1>
 <form action='update' method='post'>
 번호: <input name="no" type="text" value='${board.no}' readonly><br>
